@@ -1,0 +1,192 @@
+html    {
+    font-size: 100%;
+}
+
+body    {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.jarditou p {
+    margin: auto;
+    font-size: 30px;
+}
+
+.menu   {
+    margin-bottom: 5px;
+    background-color: #000000;
+}
+
+.menu li    {
+    list-style-type:none;
+    max-height: 10%;
+}
+
+.menu a {
+    color: #FFFFFF;
+}
+
+.promo  {
+    max-width: 100%;
+}
+
+.table  {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.tableau img {
+    width: 100px;
+}
+
+.footerlink {
+    background-color: #000000;
+    margin-top: 5px;
+}
+
+.footerlink li {
+    list-style-type:none;
+}
+
+.footerlink a   {
+    color: #FFFF;
+}
+
+@media screen and (max-width: 768px)
+{
+    .jarditou   {
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+        margin: auto;
+    }
+
+    #logo_jarditou  {
+        max-width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .jarditou p {
+        font-size: 5vmin;
+    }
+
+    .menu   {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu ul {
+        margin: auto;
+        padding: 0px;
+    }
+
+    .menu a {
+        font-size: 3vw;
+    }
+
+    section h1  {
+        font-size: 3.5vw;
+    }
+    
+    section h3  {
+        font-size: 2.5vw;
+    }
+    
+    section p   {
+        font-size: 2vw;
+    }
+
+    .colone {
+        display: none;
+    }
+
+    .table_title    {
+        font-size: 4vw;
+    }
+
+    .table  {
+        font-size: 2.5vw;
+    }
+
+    .table img  {
+        max-width: 50%;
+    }
+
+    .footerlink {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footerlink ul {
+        margin: auto;
+        padding: 0px;
+    }
+
+    .footerlink li  {
+        padding: none  ;
+    }
+
+    .footerlink a   {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (min-width: 769px)
+{
+    body   {
+        max-width: 1110px;
+        margin: auto;
+    }
+
+    .jarditou   {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #logo_jarditou {
+        width: 155px;
+        margin-left: 10px;
+    }
+
+    .menu {
+        display: flex;
+        height: 50px;
+        max-width: 100%;
+    }
+    
+    .menu li {
+        display: inline;
+    }
+    
+    .contentacceuil {
+        display: inline-block;
+        width: 65%;
+        min-height: 450px;
+    }
+    
+    .contentacceuil p   {
+        font-size: 14px;
+    }
+    
+    .colone {
+        display: inline;
+        float: right;
+        width: 35%;
+        height: 450px;
+        background-color: #d8d8d8;
+    }
+    
+    .colone p   {
+        margin: inherit;
+    }
+        
+    .footerlink {
+        display: flex;
+        height: 50px;
+        max-width: 100%;
+    }
+    
+    .footerlink li  {
+        display: inline;
+    }
+}
