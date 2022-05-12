@@ -30,16 +30,22 @@
         <p>* Ces zones sont obligatoires</p>
         <fieldset>
             <legend>Vos coordonnées</legend>
-            <label for="nom">Votre nom*:</label><input type="text" name="nom" id="nom" required><br>
-            <label for="prenom">Votre prénom*:</label><input type="text" name="prenom" id="prenom" required><br><br>
+            <label for="nom">Votre nom*:</label><input type="text" name="nom" id="nom" required>
+            <p class="error" id="erreur_nom"></p>
+            <label for="prenom">Votre prénom*:</label><input type="text" name="prenom" id="prenom" required>
+            <p class="error" id="erreur_prénom"></p>
             <label>Sexe*:</label>
             <input type="radio" name="sexe" value="Féminin" id=Féminin required><label for="Féminin">Féminin</label>
-            <input type="radio" name="sexe" value="Masculin" id=Masculin required><label for="Masculin">Masculin</label><br><br>
-            <label for="dtn">Date de naissance*</label><input type="date" name="dtn" id="dtn" required><br>
-            <label for="cp">Code postal*</label><input type="number" name="cp" id="cp" required><br>
-            <label for="adress">Adresse:</label><input type="text" name="adress" id="adress"><br>
-            <label for="ville">Ville:</label><input type="text" name="ville" id="ville"><br>
-            <label for="email">Email*:</label><input type="email" placeholder="dave.loper@afapa.fr" name="email" id="email" required><br>
+            <input type="radio" name="sexe" value="Masculin" id=Masculin required><label for="Masculin">Masculin</label>
+            <p class="error" id="erreur_sexe"></p>
+            <label for="dtn">Date de naissance*</label><input type="date" name="dtn" id="dtn" required>
+            <p class="error" id="erreur_dtn"></p>
+            <label for="cp">Code postal*</label><input type="number" name="cp" id="cp" required>
+            <p class="error" id="erreur_cp"></p>
+            <label for="adress">Adresse:</label><input type="text" name="adress" id="adress"><br><br>
+            <label for="ville">Ville:</label><input type="text" name="ville" id="ville"><br><br>
+            <label for="email">Email*:</label><input type="email" placeholder="dave.loper@afapa.fr" name="email" id="email" required>
+            <p class="error" id="erreur_mail"></p>
         </fieldset>
         <fieldset>
             <legend>Votre demande</legend>
@@ -50,12 +56,15 @@
                 <option value="Question sur un produit">Question sur un produit</option>
                 <option value="Réclamation">Réclamation</option>
                 <option value="Autres">Autres</option>
-            </select><br>
+            </select>
+            <p class="error" id="erreur_sujet"></p>
             <label for="question">Votre question*:</label>
             <textarea name="question" id="question" required></textarea>
+            <p class="error" id="erreur_text"></p>
         </fieldset>
         <br>
-        <input type="checkbox" name="checkbox" id="checkbox" required><label for="checkbox">*J'accepte le traitement informatique de ce formulaire</label><br><br>
+        <input type="checkbox" name="checkbox" id="checkbox" required><label for="checkbox">*J'accepte le traitement informatique de ce formulaire</label>
+        <p class="error" id="erreur_checkbox"></p>
         <button type="button" id="button_envoyer" value="envoyer">Envoyer</button>
         <button type="button" id="button_annuler" value="annuler">Annuler</button>
     </form>

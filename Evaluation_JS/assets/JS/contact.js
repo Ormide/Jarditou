@@ -1,22 +1,39 @@
-document.getElementById("button_envoyer").addEventListener("click", function () {   //Check des champs avant submit
-    a = 0;      //Nombre de zones obligatoire (9)
+document.getElementById("button_envoyer").addEventListener("click", function () {       //Check des champs avant submit
+    let a = 0;      //Nombre de zones obligatoire (9)
 
-    reg_nom = RegExp("^[A-Za-z]+$");    //Check nom
-    résultat = reg_nom.test(document.getElementById("nom").value);
-    if (résultat == true) {
+    // Supprime tous les messages d'erreur précédent
+    // Travail en cours pour tout selectionner via leurs class commune .error
+    document.getElementById('erreur_nom').innerHTML = "";
+    document.getElementById('erreur_prénom').innerHTML = "";
+    document.getElementById('erreur_sexe').innerHTML = "";
+    document.getElementById('erreur_dtn').innerHTML = "";
+    document.getElementById('erreur_cp').innerHTML = "";
+    document.getElementById('erreur_mail').innerHTML = "";
+    document.getElementById('erreur_sujet').innerHTML = "";
+    document.getElementById('erreur_text').innerHTML = "";
+    document.getElementById('erreur_checkbox').innerHTML = "";
+
+    //Check nom
+    let reg_nom = RegExp("^[A-Za-z]+$");
+    if (reg_nom.test(document.getElementById("nom").value) == true) {
         a++;
     }
-    else alert("Votre nom doit au moins comporter 1 caractères qui ne soit ni un chiffre ni un espace.")
+    else {
+        document.getElementById('erreur_nom').innerHTML = "Votre nom doit au moins comporter 1 caractères qui ne soit ni un chiffre ni un espace.";
+    }
 
-    reg_prenom = RegExp("^[A-Za-z]+$");     //Check prénom
-    résultat = reg_prenom.test(document.getElementById("prenom").value);
-    if (résultat == true) {
+    //Check prénom
+    let reg_prenom = RegExp("^[A-Za-z]+$");
+    if (reg_prenom.test(document.getElementById("prenom").value) == true) {
         a++;
     }
-    else alert("Votre prénom doit au moins comporter 1 caratères qui ne soit ni un chiffre ni un espace.")
+    else {
+        document.getElementById('erreur_prénom').innerHTML = "Votre prénom doit au moins comporter 1 caratères qui ne soit ni un chiffre ni un espace.";
+    }
 
-    sexe = document.getElementsByName("sexe");      //Check sexe
-    for (i=0; i<sexe.length; i++) {
+    //Check sexe
+    let sexe = document.getElementsByName("sexe");
+    for (let i=0; i<sexe.length; i++) {
         if (sexe[i].checked) {
             sexe = sexe[i].value;
         }
@@ -24,45 +41,65 @@ document.getElementById("button_envoyer").addEventListener("click", function () 
     if (sexe == "Féminin" || sexe == "Masculin") {
         a++;
     }
-    else alert("Veuillez choisir un sexe.")
-
-    reg_dtn = RegExp("^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]$");       //Check date de naissance
-    résultat = reg_dtn.test(document.getElementById("dtn").value);
-    if (résultat == true) {
-        a++;        
+    else {
+        document.getElementById('erreur_sexe').innerHTML = "Veuillez choisir un sexe.";
     }
-    else alert("Date de naissance invalide.")
 
-    reg_cp = RegExp("^[0-9]{5}$");        //Check code postal
-    résultat = reg_cp.test(document.getElementById("cp").value);
-    if (résultat == false) {
-        alert("Votre code postal doit être composé de 5 chiffres.");
+    //Check date de naissance
+    let dtn = document.getElementById("dtn").value;
+    let dtn_year = new Date(dtn).getFullYear();
+    let year = new Date().getFullYear();
+    let reg_dtn = RegExp("^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]$");
+    if (dtn_year > year - 120 && dtn_year <= year && reg_dtn.test(dtn) == true) {
+        a++;  
     }
-    else a++
+    else {
+        document.getElementById('erreur_dtn').innerHTML = "Date de naissance invalide.";
+    }
 
-    reg_email = RegExp("^[a-z0-9.-]+@[a-z0-9.-]{2}.[a-z]{2}$");       //Check email
-    résultat = reg_email.test(document.getElementById("email").value);
-    if (résultat == true) {
+    //Check code postal
+    let reg_cp = RegExp("^[0-9]{5}$");
+    if (reg_cp.test(document.getElementById("cp").value) == true) {
         a++;
     }
-    else alert("Adresse e-mail invalide.")   
+    else {
+        document.getElementById('erreur_cp').innerHTML = "Votre code postal doit être composé de 5 chiffres.";
+    }
 
-    if (document.getElementById("sujet").value != "") {     //Check sujet
+    //Check email
+    let reg_email = RegExp("^[a-z0-9.-]+@[a-z0-9.-]{2}.[a-z]{2}$");
+    if (reg_email.test(document.getElementById("email").value) == true) {
+        a++;
+    }
+    else {
+        document.getElementById('erreur_mail').innerHTML = "Adresse e-mail invalide.";
+    }
+
+    //Check sujet
+    if (document.getElementById("sujet").value != "") {
         a++
     }
-    else alert("Veuillez choisir un sujet.")                                                                    
+    else {
+        document.getElementById('erreur_sujet').innerHTML = "Veuillez choisir un sujet.";
+    }                                                                
 
-    if (document.getElementById("question").value !="") {       //Check question
+    //Check question
+    if (document.getElementById("question").value !="") {
         a++;
     }
-    else alert("Veuillez saisir votre question.")                                                             
+    else {
+        document.getElementById('erreur_text').innerHTML = "Veuillez saisir votre question.";
+    }                                                         
 
-    if (document.getElementById('checkbox').checked) {       //Check traitement informatique
+    //Check traitement informatique
+    if (document.getElementById('checkbox').checked) {
         a++;
     } 
-    else alert("Veuillez accepter le traitement informatique de ce formulaire.")
-
-    if (a ==9) {        //Submit
+    else {
+        document.getElementById('erreur_checkbox').innerHTML = "Veuillez accepter le traitement informatique de ce formulaire.";
+    }
+    //Submit
+    if (a ==9) {
         document.forms[0].submit();
     }
 });
