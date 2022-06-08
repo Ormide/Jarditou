@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarditou</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+
+    <header class="d-none d-lg-block">
+        <div class="row justify-content-between">
+            <div class="col-2">
+                <img src="src/img/jarditou_logo.jpg" alt="logo jarditou" title="Jarditou" class="img-fluid" id="logo_jarditou">
+            </div>
+            <div class="col-3">
+                <p class="h2">Tout le jardin</p>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Jarditou.com</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" title="Acceuil">Acceuil</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="tableau.html" title="Tableau">tableau <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="contact.html" title="Contact">Contact</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Votre promotion" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+            </form>
+        </div>
+    </nav>
+    
+    <img src="src/img/promotion.jpg" class="img-fluid max-width: 100%" alt="promotion sur les lames de terrasses" title="Promotion sur les lames de terrasses" id="promotion">
+
+    <div class="table-responsive-lg shadow">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table-active">
+                    <th scope="col" class="col-3">Photo</th>
+                    <th scope="col" class="col-1">ID</th>
+                    <th scope="col" class="col-3">Catégorie</th>
+                    <th scope="col" class="col-2">Libellé</th>
+                    <th scope="col" class="col-1">Prix</th>
+                    <th scope="col" class="col-2">Couleur</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-warning">
+                    <td><img src="src/img/7.jpg" class="col-5 p-0" alt="barbecues 7" title="Barbecues Aramis"></td>
+                    <td>7</td>
+                    <td>Barbecues</td>
+                    <td>Aramis</td>
+                    <td>110.00€</td>
+                    <td>Brun</td>
+                </tr>
+                <tr>
+                    <td><img src="src/img/8.jpg" class="col-5 p-0" alt="barbecues 8" title="Barbecues Athos"></td>
+                    <td>8</td>
+                    <td>Barbecues</td>
+                    <td>Athos</td>
+                    <td>249.99€</td>
+                    <td>Noir</td>
+                </tr>
+                <tr class="table-warning">
+                    <td><img src="src/img/11.jpg" class="col-5 p-0" alt="barbecues 11" title="Barbecues Clatronic"></td>
+                    <td>11</td>
+                    <td>Barbecues</td>
+                    <td>Clatronic</td>
+                    <td>135.90€</td>
+                    <td>Chrome</td>
+                </tr>
+                <tr>
+                    <td><img src="src/img/12.jpg" class="col-5 p-0" alt="barbecues 12" title="barbecues Camping"></td>
+                    <td>12</td>
+                    <td>Barbecues</td>
+                    <td>Camping</td>
+                    <td>88.00€</td>
+                    <td>Noir</td>
+                </tr>
+                <tr class="table-warning">
+                    <td><img src="src/img/13.jpg" class="col-8 p-0" alt="barbecues 13" title="Barbecues Green"></td>
+                    <td>13</td>
+                    <td>Brouette</td>
+                    <td>Green</td>
+                    <td>49.00€</td>
+                    <td>Verte</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark mt-3 rounded">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerFooter" aria-controls="navbarTogglerFooter" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerFooter">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Metions légales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Horaires</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Plan du site</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
